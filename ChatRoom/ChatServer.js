@@ -1,11 +1,11 @@
-/*
-±¾´ÎÎÒÃÇÐèÒªÊ¹ÓÃÒ»¸ö½Ðsocket.ioµÄÄ£¿é£¬Õâ¸öÄ£¿é£¬ÎÒÃÇ¿ÉÒÔÔÚÏß°²×°£¬ÃüÁîÊÇ
+ï»¿/*
+æœ¬æ¬¡æˆ‘ä»¬éœ€è¦ä½¿ç”¨ä¸€ä¸ªå«socket.ioçš„æ¨¡å—ï¼Œè¿™ä¸ªæ¨¡å—ï¼Œæˆ‘ä»¬å¯ä»¥åœ¨çº¿å®‰è£…ï¼Œå‘½ä»¤æ˜¯
 npm install socket.io
-ÓÐÐ©µØ·½ÓÐÈËËµÒª¼ÓÉÏ-d,µ«ÎÒ×öµÄÊ±ºò£¬È·ÊµÃ»ÓÐ¼Ó£¬Ò²³É¹¦ÁË£¬Ö»ÊÇ²»ÖªµÀÕâ¸ö
--dµ½µ×ÊÇºÎ×÷ÓÃ¡£ÏÈ²»¹ÜÁË£¬µÈÒÔºóÁË½âÁË×ÔÈ»Ò²¾ÍÖªµÀÁË¡£
-½¨Á¢Ò»¸öÁÄÌì·þÎñÆ÷£¬Ê×ÏÈµ±È»ÊÇ½¨Á¢Ò»¸ö·þÎñÆ÷£¬È»ºó¾ÍÕìÌýÕâ¸ö·þÎñÆ÷¾ÍOKÁË¡£
-×¢ÒâÕâ¸ö·þÎñÆ÷¸úÎÒÃÇÉÏÒ»´Î½²µÃÄÇ¸ö¾²Ì¬ÎÄ¼þ·þÎñÆ÷ÖÐÊ¹ÓÃµÄfsÒ»Ñù£¬Èç¹ûÎÒÃÇÕì
-ÌýµÄhtml£¬¼´½»»¥ÎÄ¼þ´æÔÚµÄ»°£¬¶ÁÈ¡Ëû£¬²¢·µ»Øä¯ÀÀÆ÷ÖÐ£¬´ïµ½½»»¥µÄ¹¦Ð§¡£
+æœ‰äº›åœ°æ–¹æœ‰äººè¯´è¦åŠ ä¸Š-d,ä½†æˆ‘åšçš„æ—¶å€™ï¼Œç¡®å®žæ²¡æœ‰åŠ ï¼Œä¹ŸæˆåŠŸäº†ï¼Œåªæ˜¯ä¸çŸ¥é“è¿™ä¸ª
+-dåˆ°åº•æ˜¯ä½•ä½œç”¨ã€‚å…ˆä¸ç®¡äº†ï¼Œç­‰ä»¥åŽäº†è§£äº†è‡ªç„¶ä¹Ÿå°±çŸ¥é“äº†ã€‚
+å»ºç«‹ä¸€ä¸ªèŠå¤©æœåŠ¡å™¨ï¼Œé¦–å…ˆå½“ç„¶æ˜¯å»ºç«‹ä¸€ä¸ªæœåŠ¡å™¨ï¼Œç„¶åŽå°±ä¾¦å¬è¿™ä¸ªæœåŠ¡å™¨å°±OKäº†ã€‚
+æ³¨æ„è¿™ä¸ªæœåŠ¡å™¨è·Ÿæˆ‘ä»¬ä¸Šä¸€æ¬¡è®²å¾—é‚£ä¸ªé™æ€æ–‡ä»¶æœåŠ¡å™¨ä¸­ä½¿ç”¨çš„fsä¸€æ ·ï¼Œå¦‚æžœæˆ‘ä»¬ä¾¦
+å¬çš„htmlï¼Œå³äº¤äº’æ–‡ä»¶å­˜åœ¨çš„è¯ï¼Œè¯»å–ä»–ï¼Œå¹¶è¿”å›žæµè§ˆå™¨ä¸­ï¼Œè¾¾åˆ°äº¤äº’çš„åŠŸæ•ˆã€‚
 */
 var http = require("http"),socketio = require("socket.io"),fs=require("fs");
 var chatserver = http.createServer(function (request, response) {

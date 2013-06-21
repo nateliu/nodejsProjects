@@ -1,10 +1,10 @@
-/*ÊµÏÖÒ»¸ö¾²Ì¬ÎÄ¼ş·şÎñÆ÷,Èç¹ûÍøÕ¾±¾µØÄ¿Â¼ÄÜÕÒµ½£¬¾ÍÏÔÊ¾ÄÚÈİ£¬ÕÒ²»µ½¾ÍÏÔÊ¾
-404ÎÄ¼şÃ»ÓĞÕÒµ½µÄĞÅÏ¢¾Í¿ÉÒÔÁË¡£
-ÒªÓÃµ½µÄÄ£¿é£º
+ï»¿/*å®ç°ä¸€ä¸ªé™æ€æ–‡ä»¶æœåŠ¡å™¨,å¦‚æœç½‘ç«™æœ¬åœ°ç›®å½•èƒ½æ‰¾åˆ°ï¼Œå°±æ˜¾ç¤ºå†…å®¹ï¼Œæ‰¾ä¸åˆ°å°±æ˜¾ç¤º
+404æ–‡ä»¶æ²¡æœ‰æ‰¾åˆ°çš„ä¿¡æ¯å°±å¯ä»¥äº†ã€‚
+è¦ç”¨åˆ°çš„æ¨¡å—ï¼š
 http,fs,url,path
-httpÓÃÀ´½¨Á¢web·şÎñÆ÷£¬fsÓÃÀ´¶ÁÈ¡ÎÄ¼ş£¬urlÓÃÀ´»ñÈ¡webÂ·¾¶£¬¶øpathÔò¿ÉÒÔÓÃ
-À´»ñÈ¡ÎÄ¼ş±¾µØÂ·¾¶¼°Ïà¹Ø¼ì²â²Ù×÷.
-×Ô¶¨ÒåµÄÒ»¸öMIMEÄ£¿é
+httpç”¨æ¥å»ºç«‹webæœåŠ¡å™¨ï¼Œfsç”¨æ¥è¯»å–æ–‡ä»¶ï¼Œurlç”¨æ¥è·å–webè·¯å¾„ï¼Œè€Œpathåˆ™å¯ä»¥ç”¨
+æ¥è·å–æ–‡ä»¶æœ¬åœ°è·¯å¾„åŠç›¸å…³æ£€æµ‹æ“ä½œ.
+è‡ªå®šä¹‰çš„ä¸€ä¸ªMIMEæ¨¡å—
 */
 var mime = require("./Mime");
 var http = require("http"),fs = require("fs"), url = require("url"), path = require("path");
@@ -13,18 +13,18 @@ http.createServer(function (request, response) {
     var abspath = __dirname + webpath;
     path.exists(abspath, function (exist) {
         if (exist) {
-            //Ê¹ÓÃ¶ş½øÖÆ¶ÁÈ¡ÎÄ¼ş£¬×îºóÒ²ÊÇÓÃ¶ş½øÖÆĞ´ÄÚÈİ¡£Èçresponse.write(xxx,"binanry");
+            //ä½¿ç”¨äºŒè¿›åˆ¶è¯»å–æ–‡ä»¶ï¼Œæœ€åä¹Ÿæ˜¯ç”¨äºŒè¿›åˆ¶å†™å†…å®¹ã€‚å¦‚response.write(xxx,"binanry");
             fs.readFile(abspath, "binary", function (err, data) {
                 if (err) {
                     throw err;
                 }
 
-                //»ñÈ¡ÎÄ¼şµÄºó×ºÃû
+                //è·å–æ–‡ä»¶çš„åç¼€å
                 var ext = path.extname(webpath);
                 ext = ext ? ext.slice(1) : "unknown";
                 console.log(ext);
 
-                //¸ù¾İÎÄ¼şµÄºó×ºÃûµÃµ½¶ÔÓ¦µÄMIME
+                //æ ¹æ®æ–‡ä»¶çš„åç¼€åå¾—åˆ°å¯¹åº”çš„MIME
                 var contentType = mime.mimes[ext];
                 console.log(contentType);
 
