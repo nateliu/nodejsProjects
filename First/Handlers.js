@@ -1,4 +1,4 @@
-function start() {
+﻿function start() {
     console.log("This is from start method");
     function sleep(milliSeconds) {
         var startTime = new Date().getTime();

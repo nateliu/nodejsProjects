@@ -1,4 +1,4 @@
-exports.mimes = {
+﻿exports.mimes = {
     '323': 'text/h323',
     acx: 'application/internet-property-stream',
     ai: 'application/postscript',
